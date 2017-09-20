@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>首页</title>
+    <meta name="description" content="Dashboard" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!--Basic Styles-->
+    <link rel="stylesheet" href="Content/plugins/layui/css/layui.css">
+    <link rel="stylesheet" href="Content/css/common.css" />
+    <style>
+        .layer-freeze{
+            padding: 18px 0;
+            text-align: center;
+        }
+        .layer-freeze .title{
+            font-size:14px;
+            margin-bottom:8px;
+        }
+        .layer-freeze .text{
+            color: #999;
+        }
+    </style>
+</head>
+
+<body class="index">
+
+    <div class="navbar header">
+        <div class="navbar-inner hd-bg">
+            <div class="navbar-container">
+                <div class="navbar-header pull-left">
+                    <a href="#" class="navbar-brand logo">
+                        <small>
+                            <img src="./Content/img/logo.png" alt=""/>
+                             <span>易销售管理系统</span> 
+                        </small>
+                    </a>
+                </div>
+                <div id="sidebar-collapse" class="sidebar-collapse">
+                    <i class="collapse-icon fa fa-bars"></i>
+                </div>
+                <div class="navbar-header pull-right hd-right">
+                    <p>
+                        <span>你好，张三</span>
+                        <a href="###" onClick="ChangePass()">[修改密码]</a>
+                        <a href="###" onClick="Exit()">[退出]</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container container-fluid">
+        <div class="page-container">
+            <div class="page-sidebar" id="sidebar">
+                <ul class="sidebar-menu nav nav-pills nav-stacked nav-bracket">
+                    <li class="active open">
+                        <a href="#" class="menu-dropdown">
+                            <i class="fa fa-tag"></i>
+                            <span class="menu-text">1一级</span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="active">
+                                <a href="index.html">
+                                    <span class="menu-text">1.1二级</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="welcome.html">
+                            <i class="fa fa-plane"></i>
+                            <span class="menu-text">欢迎页</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="error.html">
+                            <i class="fa fa-plane"></i>
+                            <span class="menu-text">错误页</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="page-content" id="content">
+                <div class="breadcrumbs-box">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="#">当前位置：</a>
+                        </li>
+                        <li> 
+                            <span>3.0.0房源图片管理<i class="fa fa-angle-right"></i></span>
+                        </li>
+                        <li class="active">3.0.1Dashboard</li>
+                    </ul>
+                </div>
+                <div class="right-container padding10">
+                    <div class="slider-container">
+                        <div class="toggle-slide">
+                            <a href="###" onClick="SlideOpen()"><img src="./Content/img/expend.png" alt=""></a>
+                        </div>
+                        <div class="select-region">               
+                            <div class="form-item">
+                                <span>3.1.1城市:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.2分公司:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.3服务中心:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.4房间入住状态:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.5房间审核转台:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.1城市:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.2分公司:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.3服务中心:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.4房间入住状态:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.5房间审核转台:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.1城市:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.2分公司:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.3服务中心:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.4房间入住状态:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.5房间审核转台:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.1城市:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.2分公司:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.3服务中心:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.4房间入住状态:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.5房间审核转台:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.5房间审核转台:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.5房间审核转台:</span>
+                                <select name="city">
+                                    <option value="">--请选择--</option>
+                                    <option value="">杭州</option>
+                                    <option value="">苏州</option>
+                                    <option value="">湖州</option>
+                                    <option value="">北京</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <span>3.1.6关键字:</span>
+                                <input type="text" placeholder="房管员姓名、房间地址、房间编号">
+                            </div>
+                            <div class="form-item">
+                                <button class="btn btn-primary">2.1.0搜索</button>
+                                <button class="btn btn-primary">2.1.0搜索</button>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="table-menu">
+                        <div class="table-title">
+                            <span>数量合计：<font class="font-green">4</font>个</span>
+                            <span>利息合计：<font class="font-orange">4000.00</font>元</span>
+                            <span class=".dif ">总计：
+                                <span><em class="bg-red"></em>未抢单任务</span>
+                                <span><em class="bg-blue"></em>进行中任务</span>
+                                <span><em class="bg-gray"></em>完成任务</span>
+                            </span>
+                        </div>
+                        <div class="table-content">
+                            <table>
+                                <thead>
+                                    <th>序号</th>
+                                    <th>操作</th>
+                                    <th>服务中心</th>
+                                    <th>房间地址</th>
+                                    <th>房间入住状态</th>
+                                    <th>房间审核状态</th>
+                                    <th>外部编号</th>
+                                    <th>价格（元/月）</th>
+                                    <th>房管员</th>
+                                    <th>房管员手机号</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="nowrap">
+                                            <a href="###">修改</a>
+                                            <a href="###" onClick="FreezeClick()">解冻</a>
+                                        </td>     
+                                        <td>第六十九服务中心</td>
+                                        <td>龙华中路908弄9号楼501室A室2np</td>
+                                        <td>满房</td>
+                                        <td>已审核</td>
+                                        <td>A0044550A</td>
+                                        <td>2000</td>
+                                        <td>张三</td>
+                                        <td>13012345678</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="nowrap">
+                                            <a href="###">修改</a>
+                                            <a href="###" onClick="FreezeClick()">解冻</a>
+                                        </td>     
+                                        <td>第六十九服务中心</td>
+                                        <td>龙华中路908弄9号楼501室A室2np</td>
+                                        <td>满房</td>
+                                        <td>已审核</td>
+                                        <td>A0044550A</td>
+                                        <td>2000</td>
+                                        <td>张三</td>
+                                        <td>13012345678</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="nowrap">
+                                            <a href="###">修改</a>
+                                            <a href="###" onClick="FreezeClick()">解冻</a>
+                                        </td>                                
+                                        <td>第六十九服务中心</td>
+                                        <td>龙华中路908弄9号楼501室A室2np</td>
+                                        <td>满房</td>
+                                        <td>已审核</td>
+                                        <td>A0044550A</td>
+                                        <td>2000</td>
+                                        <td>张三</td>
+                                        <td>13012345678</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="nowrap">
+                                            <a href="###">修改</a>
+                                            <a href="###" onClick="FreezeClick()">解冻</a>
+                                        </td>
+                                        <td>第六十九服务中心</td>
+                                        <td>龙华中路908弄9号楼501室A室2np</td>
+                                        <td>满房</td>
+                                        <td>已审核</td>
+                                        <td>A0044550A</td>
+                                        <td>2000</td>
+                                        <td>张三</td>
+                                        <td>13012345678</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="nowrap">
+                                            <a href="###">修改</a>
+                                            <a href="###" onClick="FreezeClick()">解冻</a>
+                                        </td>     
+                                        <td>第六十九服务中心</td>
+                                        <td>龙华中路908弄9号楼501室A室2np</td>
+                                        <td>满房</td>
+                                        <td>已审核</td>
+                                        <td>A0044550A</td>
+                                        <td>2000</td>
+                                        <td>张三</td>
+                                        <td>13012345678</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="nowrap">
+                                            <a href="###">修改</a>
+                                            <a href="###" onClick="FreezeClick()">解冻</a>
+                                        </td>     
+                                        <td>第六十九服务中心</td>
+                                        <td>龙华中路908弄9号楼501室A室2np</td>
+                                        <td>满房</td>
+                                        <td>已审核</td>
+                                        <td>A0044550A</td>
+                                        <td>2000</td>
+                                        <td>张三</td>
+                                        <td>13012345678</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="nowrap">
+                                            <a href="###">修改</a>
+                                            <a href="###" onClick="FreezeClick()">解冻</a>
+                                        </td>     
+                                        <td>第六十九服务中心</td>
+                                        <td>龙华中路908弄9号楼501室A室2np</td>
+                                        <td>满房</td>
+                                        <td>已审核</td>
+                                        <td>A0044550A</td>
+                                        <td>2000</td>
+                                        <td>张三</td>
+                                        <td>13012345678</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="nowrap">
+                                            <a href="###">修改</a>
+                                            <a href="###" onClick="FreezeClick()">解冻</a>
+                                        </td>     
+                                        <td>第六十九服务中心</td>
+                                        <td>龙华中路908弄9号楼501室A室2np</td>
+                                        <td>满房</td>
+                                        <td>已审核</td>
+                                        <td>A0044550A</td>
+                                        <td>2000</td>
+                                        <td>张三</td>
+                                        <td>13012345678</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="nowrap">
+                                            <a href="###">修改</a>
+                                            <a href="###" onClick="FreezeClick()">解冻</a>
+                                        </td>     
+                                        <td>第六十九服务中心</td>
+                                        <td>龙华中路908弄9号楼501室A室2np</td>
+                                        <td>满房</td>
+                                        <td>已审核</td>
+                                        <td>A0044550A</td>
+                                        <td>2000</td>
+                                        <td>张三</td>
+                                        <td>13012345678</td>
+                                    </tr>                   
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="pagigation" class="margin-top-5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar-fixed-bottom footer">
+        <p class="footer">©Copyright 2016-2017 QK365.com All rights reserved<p>
+    </div>
+
+    <!--弹框，退出-->
+    <div class="layercon-exit hide">
+        <div class="layer-exit">
+            <p class="title">确定要退出么？</p>
+            <span class="text">如果是点击“确定”,否则点击“取消”</span>
+        </div>
+    </div>
+    <!--弹框，修改密码-->
+    <div class="layercon-password hide">
+        <div class="layer-password">
+            <div class="input-item">
+                <span><b class="require red">*</b>原密码：</span>
+                <input class="originPass" type="text" placeholder="请输入用户名" />
+            </div>
+            <div class="input-item">
+                <span><b class="require red">*</b>新密码：</span>
+                <input class="newPass" type="text" placeholder="请输入用户名" />
+            </div>
+            <div class="input-item">
+                <span><b class="require red">*</b>确认密码：</span>
+                <input class="surePass" type="text" placeholder="请输入用户名" />
+            </div>
+            <p class="alertText red"></p>
+        </div>
+    </div>
+    <!--弹框，解冻-->
+    <div class="layer-content-freeze hide">
+        <div class="layer-freeze">
+            <p class="title">你确定要解除冻结？</p>
+            <span class="text">如果是点击“确定”,否则点击“取消”</span>
+        </div>
+    </div>
+
+    <!--Basic Scripts-->
+    <script src="Content/js/skins.min.js"></script>
+    <script src="Content/js/jquery-2.0.3.min.js"></script>
+    <script src="Content/js/bootstrap.min.js"></script>
+    <script src="Content/js/beyond.min.js"></script>
+    <script src="Content/plugins/layui/layui.js"></script>
+
+    <script>
+        function Exit() {
+            layui.use('layer', function () {
+                var $ = layui.jquery, layer = layui.layer;
+                layer.open({
+                    title: '提示信息',
+                    content: $('.layercon-exit').html(),
+                    area: ['350px', ''],
+                    btn: ['确定', '取消'],
+                    yes: function (index) {
+                        layer.close(index);
+                    }
+                });
+            })
+        }
+
+        function ChangePass() {
+            $('.alertText').text('');
+            layui.use('layer', function () {
+                var $ = layui.jquery, layer = layui.layer;
+                layer.open({
+                    title: '修改密码',
+                    content: $('.layercon-password').html(),
+                    area: ['350px', ''],
+                    btn: ['确定', '取消'],
+                    yes: function (index) {
+                        if ($('.originPass').val() == '') {
+                            $('.alertText').text('原密码不能为空');
+                        }
+                    }
+                });
+            })
+        }
+
+        //分页器
+		layui.use(['laypage', 'layer'], function(){
+	  		var laypage = layui.laypage,layer = layui.layer;
+	  		laypage.render({
+	    		elem: 'pagigation',
+	    		count: 100,
+			    layout: ['count', 'prev', 'page', 'next', 'limit', 'skip'],
+			    jump: function(obj){
+					//console.log(obj)
+	    		}
+	  		});
+		});
+
+        //表单区域下拉
+		var open = false;
+		var tableMenu=$('.table-menu');
+		var slideBtn = $('.toggle-slide');
+		var container = $('.slider-container');
+		var sliderCon = $('.select-region');
+		var h = sliderCon.css('height');
+		
+		
+		//margin-top: 122px;
+		
+		var conH = 131;//max-height
+		
+		window.addEventListener('resize',function () {
+    		h = sliderCon.css('height');
+		});
+
+		console.log(h);
+	    if(h.split('px')[0] < conH){
+	        slideBtn.hide();
+	        container.css('height','auto');
+	    }else{
+	        slideBtn.show();
+	    }
+	    
+	    tableMenu.css('marginTop',(Number(container.css('height').split('px')[0])+10)+'px')
+		
+	    function SlideOpen(){
+	    	console.log(h);
+	        if(!open){
+	            container.css('height',(Number(h.split('px')[0])+20)+'px');
+				//$(this).removeClass('arrowRotate0').addClass('arrowRotate180');
+	            open = true;
+	        }else{
+	            container.css('height',conH);
+				//$(this).removeClass('arrowRotate180').addClass('arrowRotate0');
+	            open = false;
+	        }
+	
+	    }
+
+        //冻结弹框
+		function FreezeClick(event){
+			var ev = event || (event = window.event);
+			var tr = $(ev.target).parent().parent();
+			$('.layer-freeze .title').text('你确定要解除冻结'+tr.index()+'？'); 
+			layui.use('layer', function(){ 
+  				var $ = layui.jquery, layer = layui.layer;
+				layer.open({
+					title:'提示信息',
+					content: $('.layer-content-freeze').html(),
+					area: [$('.layer-freeze').width(), ''],
+					btn: ['2.1.2.1确定','2.1.2.2取消'], 
+					yes:function(index){
+						layer.msg('冻结成功！')
+					}
+				});
+			})
+		}
+    </script>
+
+</body>
+
+</html>

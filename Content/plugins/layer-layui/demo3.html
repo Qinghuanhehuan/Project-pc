@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layer-基础提示框3</title>
+  <link rel="stylesheet" href="../../css/common.css"/>
+  <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+  <script src="jquery.js"></script>
+  <script src="../layui/layui.js" charset="utf-8"></script>
+  <style>
+  	/*弹框内容区样式自定义*/
+  	.layer3 >label{
+  		display: inline-block;
+  		width: 110px;
+  		margin-bottom: 5px;
+  	}.layer3 >label:last-child{
+  		margin-bottom: 0;
+  	}
+  	.layer3 >label:nth-child(3n){
+  		width: 85px;
+  	}
+  	.layer3 >label input{
+  		margin-right: 5px;
+  	}
+  </style>
+</head>
+<body>
+<button class="btn btn-default" onClick="fn()">活动结束点击</button>
+
+<!--弹框内容-->
+<div class="layer-content3 hide">
+	<div class="layer3">
+		<label class="radio">访问者<input type="radio"/><i></i></label>
+		<label class="radio">造价师<input type="radio"/><i></i></label>
+		<label class="radio">图纸质控<input type="radio"/><i></i></label>
+		<label class="radio">超级管理员<input type="radio"/><i></i></label>
+		<label class="checkbox">设计主管<input type="checkbox"/><i></i></label>
+		<label class="checkbox">立面厨卫施工图<input type="checkbox"/><i></i></label>
+		<label class="checkbox">立面房间施工图<input type="checkbox"/><i></i></label>
+		<label class="checkbox">平面施工图<input type="checkbox"/><i></i></label>
+		<label class="checkbox">立面框图<input type="checkbox"/><i></i></label>
+		<label class="checkbox">平面施工图<input type="checkbox"/><i></i></label>
+		<label class="checkbox">平面布置图<input type="checkbox"/><i></i></label>
+		<label class="checkbox">平面框图<input type="checkbox"/><i></i></label>
+		<label class="checkbox">管理员<input type="checkbox"/><i></i></label>
+	</div>
+</div>
+
+<script>
+
+	function fn(event){
+	  var ev = event || (event = window.event);
+	  var obj = $(ev.target);
+		layui.use('layer', function(){ 
+  			var $ = layui.jquery, layer = layui.layer;
+			layer.open({
+				title:'提示标题',
+				content: $('.layer-content3').html(),
+				area: ['400px', ''], //宽高
+				btn: ['保存','取消'],//按钮
+				yes:function(index){
+					console.log(index);
+					layer.msg('保存成功');
+					layer.close(index);
+				}
+			});
+		})
+	}
+	
+</script>
+</body>
+</html>

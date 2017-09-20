@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layer-基础提示框1</title>
+  <link rel="stylesheet" href="../../css/common.css"/>
+  <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+  <script src="jquery.js"></script>
+  <script src="../layui/layui.js"></script>
+  <style>
+  	/*弹框内容区样式自定义*/
+  	.layer1{
+  		padding: 18px 0;
+  		text-align: center;
+  	}
+  	.layer1 .title{
+  		font-size:14px;
+  		margin-bottom:8px;
+  	}
+  	.layer1 .text{
+  		color: #999;
+  	}
+  </style>
+</head>
+<body>
+<button class="btn btn-default" onClick="fn()">活动结束点击</button>
+
+<!--弹框-->
+<div class="layer-content1 hide">
+	<div class="layer1">
+		<p class="title">你确定要退出系统？</p>
+		<span class="text">如果是点击“确定”,否则点击“取消”</span>
+	</div>
+</div>
+
+<script>
+
+	function fn(event){
+	  var ev = event || (event = window.event);
+	  var obj = $(ev.target);
+		layui.use('layer', function(){ 
+  		var $ = layui.jquery, layer = layui.layer; 
+			layer.open({
+				title:'普通提示信息',
+				content: $('.layer-content1').html(),
+				area: [$('.layer1').width(), ''], 
+				btn: ['2.1.2.1确定','2.1.2.2取消'], 
+				yes:function(index){
+					console.log(index);
+					layer.close(index);
+				}
+			});
+		})
+	}
+	
+</script>
+</body>
+</html>

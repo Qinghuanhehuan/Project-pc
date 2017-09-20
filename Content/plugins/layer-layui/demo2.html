@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layer-基础提示框2</title>
+  <link rel="stylesheet" href="../../css/common.css"/>
+  <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+  <script src="jquery.js"></script>
+  <script src="../layui/layui.js"></script>
+  <style>
+  	/*弹框内容区样式自定义*/
+  	.layer-content2{
+  		min-width: 400px;
+  	}
+  	.layer2 .input-item{
+  		margin-bottom: 10px;
+  	}
+  	.layer2 .input-item:last-child{
+  		margin-bottom: 0;
+  	}
+  	.layer2 span{
+  		text-align: right;
+  		display: inline-block;
+  		width: 150px;
+  	}
+  	.layer2 input[type="text"],.layer2 select {
+  		width: 200px;
+  		height: 26px;
+  	}
+  </style>
+</head>
+<body>
+<button class="btn btn-default" onClick="fn()">活动结束点击</button>
+
+<!--弹框内容-->
+<div class="layer-content2 hide">
+	<div class="layer2">
+		<div class="input-item">
+			<span><b class="require red">*</b>个人抢单最大数（个数）：</span>
+			<input type="text" placeholder="请输入用户名">
+		</div>
+		<div class="input-item">
+			<span><b class="require red">*</b>完成时限（小时）：</span>
+			<input type="text" placeholder="请输入用户名">
+		</div>
+		<div class="input-item">
+			<span><b class="require red">*</b>个人延误是否抢单：</span>
+			<select>
+				<option>-- 请选择 --</option>
+				<option>-- 是 --</option>
+				<option>-- 否 --</option>
+			</select>
+		</div>
+		<div class="input-item">
+			<span><b class="require red">*</b>房间延误是否收回：</span>
+			<select>
+				<option>-- 请选择 --</option>
+				<option>-- 是 --</option>
+				<option>-- 否 --</option>
+			</select>
+		</div>
+	</div>
+</div>
+
+<script>
+	function fn(event){
+	  var ev = event || (event = window.event);
+	  var obj = $(ev.target);
+		layui.use('layer', function(){ 
+  			var $ = layui.jquery, layer = layui.layer;
+				layer.open({
+					title:'提示标题',
+					content: $('.layer-content2').html(),
+					area: [$('.layer-content2').width()+'px', ''], //宽高
+					btn: ['2.1.2.1确定'],//按钮
+					yes:function(index){
+						console.log(index);
+						layer.close(index);
+					}
+				});
+		})
+	}
+	
+</script>
+</body>
+</html>

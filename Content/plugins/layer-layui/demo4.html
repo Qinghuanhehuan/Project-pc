@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layer-基础提示框4</title>
+  <link rel="stylesheet" href="../../css/common.css"/>
+  <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+  <script src="jquery.js"></script>
+  <script src="../layui/layui.js" charset="utf-8"></script>
+  <style>
+  	/*弹框内容区样式自定义*/
+  	.layer4 td.profit{
+  		background: #f3dfdf;
+  		color: #b74c48;
+  	}
+  	.layer4 td.loss{
+  		background: #dff1d9;
+  		color: #589058;
+  	}
+  </style>
+</head>
+<body>
+<button class="btn btn-default" onClick="fn()">活动结束点击</button>
+
+<!--弹框内容-->
+<div class="layer-content4 hide">
+	<div class="layer4">
+		<table>
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>合同金额</th>
+					<th>合同期收入</th>
+					<th>调价券总额</th>
+					<th>盈亏情况</th>
+					<th>合同签订日期</th>
+					<th>合同期限</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>￥1280.00</td>
+					<td>￥8180.00</td>
+					<td>￥1000.00</td>
+					<td class="profit">盈利￥2000.00</td>
+					<td>2015-12-22</td>
+					<td>6个月</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>￥1280.00</td>
+					<td>￥8180.00</td>
+					<td>￥1000.00</td>
+					<td class="loss">亏损￥300.00</td>
+					<td>2015-12-22</td>
+					<td>12个月</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="table-des">1、盈亏情况=合同期收入-销售底价*合同期限；其中合同金额、调价券、销售底价都为合同期限内的。</p>
+	</div>
+</div>
+
+<script>
+
+	function fn(event){
+	  var ev = event || (event = window.event);
+	  var obj = $(ev.target);
+		layui.use('layer', function(){ 
+  			var $ = layui.jquery, layer = layui.layer;
+			layer.open({
+	  			type: 1,//不显示按钮
+				title:'提示标题',
+				content: $('.layer-content4').html(),
+				area: ['680px', '']
+			});
+		})
+	}
+	
+</script>
+</body>
+</html>
