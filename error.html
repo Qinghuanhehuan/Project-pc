@@ -12,166 +12,31 @@
     <link rel="stylesheet" href="Content/css/common.css" />
 </head>
 
-<body class="index">
-
-    <div class="navbar header">
-        <div class="navbar-inner hd-bg">
-            <div class="navbar-container">
-                <div class="navbar-header pull-left">
-                    <a href="#" class="navbar-brand logo">
-                        <small>
-                            <img src="./Content/img/logo.png" alt=""/>
-                             <span>易销售管理系统</span> 
-                        </small>
-                    </a>
-                </div>
-                <div id="sidebar-collapse" class="sidebar-collapse">
-                    <i class="collapse-icon fa fa-bars"></i>
-                </div>
-                <div class="navbar-header pull-right hd-right">
+<body>
+    <div class="error">
+        <div class="error-container">
+            <div class="error-box">
+                <div class="error-info">
+                    <h4>哎呀，你访问的网址出错了！</h4>
                     <p>
-                        <span>你好，张三</span>
-                        <a href="###" onClick="ChangePass()">[修改密码]</a>
-                        <a href="###" onClick="Exit()">[退出]</a>
+                        <font>可能原因：</font>
+                        <span>网址不存在，你访问的地址不正确，请正确输入地址并访问。</span>
                     </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="main-container container-fluid">
-        <div class="page-container">
-            <div class="page-sidebar" id="sidebar">
-                <ul class="sidebar-menu nav nav-pills nav-stacked nav-bracket">
-                    <li>
-                        <a href="#" class="menu-dropdown">
-                            <i class="fa fa-tag"></i>
-                            <span class="menu-text">1一级</span>
-                            <i class="menu-expand"></i>
-                        </a>
-                        <ul class="submenu">
-                            <li>
-                                <a href="index.html">
-                                    <span class="menu-text">1.1二级</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="welcome.html">
-                            <i class="fa fa-plane"></i>
-                            <span class="menu-text">欢迎页</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="error.html">
-                            <i class="fa fa-plane"></i>
-                            <span class="menu-text">错误页</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="page-content" id="content">
-                <div class="error">
-                    <div class="error-container">
-                        <div class="error-box">
-                            <div class="error-info">
-                                <h4>哎呀，你访问的网址出错了！</h4>
-                                <p>
-                                    <font>可能原因：</font>
-                                    <span>网址不存在，你访问的地址不正确，请正确输入地址并访问。</span>
-                                </p>
-                                <div>
-                                    <span class="refresh">
-                                        <img src="./Content/img/refresh.png" alt="" />
-                                        <font class="font-green">刷新</font>
-                                    </span>
-                                    <span class="return">
-                                        <img src="./Content/img/return.png" alt="" />
-                                        <font>返回</font>
-                                    </span>
-                                </div>
-                            </div>
-                            <img src="./Content/img/error.png" alt="">
-                        </div>
+                    <div>
+                        <span class="refresh">
+                            <img src="./Content/img/refresh.png" alt="" />
+                            <font class="font-green">刷新</font>
+                        </span>
+                        <span class="return">
+                            <img src="./Content/img/return.png" alt="" />
+                            <font>返回</font>
+                        </span>
                     </div>
                 </div>
+                <img src="./Content/img/error.png" alt="">
             </div>
         </div>
     </div>
-
-    <div class="navbar-fixed-bottom footer">
-        <p class="footer">©Copyright 2016-2017 QK365.com All rights reserved<p>
-    </div>
-
-    <!--弹框，退出-->
-    <div class="layercon-exit hide">
-        <div class="layer-exit">
-            <p class="title">确定要退出么？</p>
-            <span class="text">如果是点击“确定”,否则点击“取消”</span>
-        </div>
-    </div>
-    <!--弹框，修改密码-->
-    <div class="layercon-password hide">
-        <div class="layer-password">
-            <div class="input-item">
-                <span><b class="require red">*</b>原密码：</span>
-                <input class="originPass" type="text" placeholder="请输入用户名" />
-            </div>
-            <div class="input-item">
-                <span><b class="require red">*</b>新密码：</span>
-                <input class="newPass" type="text" placeholder="请输入用户名" />
-            </div>
-            <div class="input-item">
-                <span><b class="require red">*</b>确认密码：</span>
-                <input class="surePass" type="text" placeholder="请输入用户名" />
-            </div>
-            <p class="alertText red"></p>
-        </div>
-    </div>
-
-    <!--Basic Scripts-->
-    <script src="Content/js/skins.min.js"></script>
-    <script src="Content/js/jquery-2.0.3.min.js"></script>
-    <script src="Content/js/bootstrap.min.js"></script>
-    <script src="Content/js/beyond.min.js"></script>
-    <script src="Content/plugins/layui/layui.js"></script>
-
-    <script>
-        function Exit() {
-            layui.use('layer', function () {
-                var $ = layui.jquery, layer = layui.layer;
-                layer.open({
-                    title: '提示信息',
-                    content: $('.layercon-exit').html(),
-                    area: ['350px', ''],
-                    btn: ['确定', '取消'],
-                    yes: function (index) {
-                        layer.close(index);
-                    }
-                });
-            })
-        }
-
-        function ChangePass() {
-            $('.alertText').text('');
-            layui.use('layer', function () {
-                var $ = layui.jquery, layer = layui.layer;
-                layer.open({
-                    title: '修改密码',
-                    content: $('.layercon-password').html(),
-                    area: ['350px', ''],
-                    btn: ['确定', '取消'],
-                    yes: function (index) {
-                        if ($('.originPass').val() == '') {
-                            $('.alertText').text('原密码不能为空');
-                        }
-                    }
-                });
-            })
-        }
-    </script>
 
 </body>
 
